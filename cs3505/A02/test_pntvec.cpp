@@ -3,279 +3,354 @@
 #include <cmath>
 #include "pntvec.h"
 
-void default_constructor_test(int &errorNumber);
-void parametered_constructor_test(int &errorNumber);
-void copy_constructor_test(int &errorNumber);
-void assignment_operator_test(int &errorNumber);
-void addition_operator_test(int &errorNumber);
-void subtraction_operator_test(int &errorNumber);
-void multiplication_operator_test(int &errorNumber);
-void negation_operator_test(int &errorNumber);
-void distance_to_test(int &errorNumber);
-void istream_test(int &errorNumber);
-void ostream_test(int &errorNumber);
-void get_x_test(int &errorNumber);
-void get_y_test(int &errorNumber);
-void get_z_test(int &errorNumber);
-void test_multiplying_by_fraction(int &errorNumber);
-void test_chaining_assignment (int &errorNumber);
-void test_printing_with_decimals (int &errorNumber);
-void test_multiply_by_a_number_slightly_bigger_than_one(int &errorNumber);
-void test_very_small_numbers(int &errorNumber);
-void test_istream_wtih_multiple_pntvecs(int &errorNumber);
-void test_ostream_wtih_multiple_pntvecs(int &errorNumber);
-void test_subtract_a_non_whole_number(int &errorNumber);
-void test_subtract_a_negative_pntvec(int &errorNumber);
-void test_negating_a_negative_pntvec(int &errorNumber);
-void test_distance_to_with_negative_points(int &errorNumber);
-void test_distance_to_with_the_same_point(int &errorNumber);
+int report_results (int &error_methods);
+void test_default_const (int &error_methods);
+void test_const (int &error_methods);
+void test_copy_const (int &error_methods);
+void test_get_x (int &error_methods);
+void test_get_y (int &error_methods);
+void test_get_z (int &error_methods);
+void test_equal_operator (int &error_methods);
+void test_plus_operator (int &error_methods);
+void test_minus_operator (int &error_methods);
+void test_unary_minus_operator (int &error_methods);
+void test_multiply_operator (int &error_methods);
+void test_distance_to (int &error_methods);
+void test_ostream (int &error_methods);
+void test_istream (int &error_methods);
+void test_multiplying_by_fraction (int &error_methods);
+void test_chaining_assignment (int &error_methods);
+void test_printing_with_decimals (int &error_methods);
+void test_multiply_by_a_number_slightly_bigger_than_one (int &error_methods);
+void test_very_small_numbers (int &error_methods);
+void test_istream_wtih_multiple_pntvecs (int &error_methods);
+void test_ostream_wtih_multiple_pntvecs (int &error_methods);
+void test_distance_to_with_the_same_point (int &error_methods);
+void test_distance_to_with_negative_points (int &error_methods);
+void test_negating_a_negative_pntvec (int &error_methods);
+void test_subtract_a_negative_pntvec (int &error_methods);
+void test_subtract_a_non_whole_number (int &error_methods);
 
+/**
+   The main method calls each of the functions listed above once to test the functionality of
+   the pntvec object. See header comment for direct functionality of this function.
 
+   returns --
+   0 if there are no errors.
+   -1 if there are errors.
+ */
 int main()
 {
-    int errorNumber = 0;
-    default_constructor_test(errorNumber);
-    parametered_constructor_test(errorNumber);
-    copy_constructor_test(errorNumber);
-    assignment_operator_test(errorNumber);
-    addition_operator_test(errorNumber);
-    subtraction_operator_test(errorNumber);
-    multiplication_operator_test(errorNumber);
-    negation_operator_test(errorNumber);
-    distance_to_test(errorNumber);
-    istream_test(errorNumber);
-    ostream_test(errorNumber);
-    get_x_test(errorNumber);
-    get_y_test(errorNumber);
-    get_z_test(errorNumber);
-    test_multiplying_by_fraction(errorNumber);
-    test_chaining_assignment (errorNumber);
-    test_printing_with_decimals (errorNumber);
-    test_multiply_by_a_number_slightly_bigger_than_one(errorNumber);
-    test_very_small_numbers(errorNumber);
-    test_istream_wtih_multiple_pntvecs(errorNumber);
-    test_ostream_wtih_multiple_pntvecs(errorNumber);
-    test_subtract_a_non_whole_number(errorNumber);
-    test_subtract_a_negative_pntvec(errorNumber);
-    test_negating_a_negative_pntvec(errorNumber);
-    test_distance_to_with_negative_points(errorNumber);
-    test_distance_to_with_the_same_point(errorNumber);
-
-    return errorNumber == 0 ? 0 : -1;
+  int error_methods = 0;
+  test_default_const(error_methods);
+  test_const (error_methods);
+  test_copy_const (error_methods);
+  test_get_x (error_methods);
+  test_get_y (error_methods);
+  test_get_z (error_methods);
+  test_equal_operator (error_methods);
+  test_plus_operator (error_methods);
+  test_minus_operator (error_methods);
+  test_multiply_operator (error_methods);
+  test_unary_minus_operator (error_methods);
+  test_distance_to (error_methods);
+  test_ostream (error_methods);
+  test_istream (error_methods);
+  test_multiplying_by_fraction (error_methods);
+  test_chaining_assignment (error_methods);
+  test_printing_with_decimals (error_methods);
+  test_multiply_by_a_number_slightly_bigger_than_one (error_methods);
+  test_very_small_numbers (error_methods);
+  test_istream_wtih_multiple_pntvecs (error_methods);
+  test_ostream_wtih_multiple_pntvecs (error_methods);
+  test_distance_to_with_the_same_point (error_methods);
+  test_distance_to_with_negative_points (error_methods);
+  test_negating_a_negative_pntvec (error_methods);
+  test_subtract_a_negative_pntvec (error_methods);
+  test_subtract_a_non_whole_number (error_methods);
+  return error_methods == 0 ? 0 : -1;
 }
 
-void default_constructor_test(int &errorNumber)
+void test_default_const (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point;
-        if(point.get_x() != 0 || point.get_y() != 0 || point.get_z() != 0) throw -1;
+      pntvec t;
+      if(t.get_x() != 0 || t.get_y() != 0 || t.get_z() != 0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void parametered_constructor_test(int &errorNumber)
+void test_const (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point(1.0, 2.0, 3.0);
-        if(point.get_x() != 1.0 || point.get_y() != 2.0 || point.get_z() != 3.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void copy_constructor_test(int &errorNumber)
+void test_copy_const (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1(3.0, 4.0, 5.0);
-        pntvec pointCopy(point1);
-        if(pointCopy.get_x() != 3.0 || pointCopy.get_y() != 4.0 || pointCopy.get_z() != 5.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      pntvec s (t);
+      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3 || s.get_x() != 1 || s.get_y() != 2 || s.get_z() != 3)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
-    } 
+      ++error_methods;
+    }
 }
 
-void assignment_operator_test(int &errorNumber)
+void test_get_x (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1(1.0, 2.0, 3.0);
-        pntvec point2 = point2;
-        if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) throw -1;
-        if(point2.get_x() != 1.0 || point2.get_y() != 2.0 || point2.get_z() != 3.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      double x = t.get_x();
+      if (x != 1.0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void addition_operator_test(int &errorNumber)
+void test_get_y (int &error_methods)
 {
-    try
+try
     {
-        pntvec point1 (1.0, 2.0, 3.0);
-        pntvec point2 (2.0, 3.0, 4.0);
-        pntvec result = point1 + point2;
-        if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) throw -1;
-        if(point2.get_x() != 2.0 || point2.get_y() != 3.0 || point2.get_z() != 4.0) throw -1;
-        if(result.get_x() != 3.0 || result.get_y() != 5.0 || result.get_z() != 7.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      double y = t.get_y();
+      if (y != 2.0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void subtraction_operator_test(int &errorNumber)
+void test_get_z (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1 (1.0, 2.0, 3.0);
-        pntvec point2 (2.0, 3.0, 4.0);
-        pntvec result = point1 - point2;
-        if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) throw -1;
-        if(point2.get_x() != 2.0 || point2.get_y() != 3.0 || point2.get_z() != 4.0) throw -1;
-        if(result.get_x() != -1.0 || result.get_y() != -1.0 || result.get_z() != -1.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      double z = t.get_z();
+      if (z != 3.0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void multiplication_operator_test(int &errorNumber)
+void test_equal_operator (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1 (1.0, 2.0, 3.0);
-        double num = 2.0;
-        pntvec result = point1 * num;
-        if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) throw -1;
-        if(result.get_x() != 2.0 || result.get_y() != 4.0 || result.get_z() != 6.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      pntvec s;
+      s = t;
+      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3)
+	{
+	  throw (-1);
+	}
+      if(s.get_x() != 1 || s.get_y() != 2 || s.get_z() != 3)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void negation_operator_test(int &errorNumber)
+void test_plus_operator (int &error_methods)
 {
-    try
+   try
     {
-        pntvec point1(1.0, 2.0, 3.0);
-        pntvec result = -point1;
-        if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) throw -1;
-        if(result.get_x() != -1.0 || result.get_y() != -2.0 || result.get_z() != -3.0) throw -1;
+      pntvec t (1.0, 2.0, 3.0);
+      pntvec s (-1.0, -2.0, -3.0);
+      pntvec p;
+      p = t + s;
+      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3)
+	{
+	  throw (-1);
+	}
+      if(s.get_x() != -1 || s.get_y() != -2 || s.get_z() != -3)
+	{
+	  throw (-1);
+	}
+     if(p.get_x() != 0 || p.get_y() != 0 || p.get_z() != 0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void distance_to_test(int &errorNumber)
+
+void test_minus_operator (int &error_methods)
 {
-    try
+   try
     {
-        pntvec point1(0.0, 0.0, 0.0);
-        pntvec point2(3.0, 3.0, 3.0);
-        double x = point1.distance_to(point2);
-        if(point1.get_x() != 0.0 || point1.get_y() != 0.0 || point1.get_z() != 0.0) throw -1;
-        if(point2.get_x() != 3.0 || point2.get_y() != 3.0 || point2.get_z() != 3.0) throw -1;
-        if(x != std::sqrt(27)) throw -1;
+      pntvec t (10.0, 20.0, 30.0);
+      pntvec s (10.0, 20.0, 30.0);
+      pntvec p;
+      p = t - s;
+      if(t.get_x() != 10 || t.get_y() != 20 || t.get_z() != 30)
+	{
+	  throw (-1);
+	}
+      if(s.get_x() != 10 || s.get_y() != 20 || s.get_z() != 30)
+	{
+	  throw (-1);
+	}
+     if(p.get_x() != 0 || p.get_y() != 0 || p.get_z() != 0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void istream_test(int &errorNumber)
+void test_multiply_operator (int &error_methods)
 {
-    try
+   try
     {
-        std::stringstream ss;
-        pntvec point1;
-        ss << "10.0             2.0                        -0.00008";
-        ss >> point1;
-        if(point1.get_x() != 10.0 || point1.get_y() != 2.0 || point1.get_z() != -0.00008) throw -1;
+      pntvec t (10.0, 20.0, 30.0);
+      pntvec p;
+      double s = 2.0;
+      p = t * s;
+      if(t.get_x() != 10 || t.get_y() != 20 || t.get_z() != 30)
+	{
+	  throw (-1);
+	}
+     if(p.get_x() != 20 || p.get_y() != 40 || p.get_z() != 60)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void ostream_test(int &errorNumber)
+void test_unary_minus_operator (int &error_methods)
 {
-    try
+  try
     {
-        std::stringstream ss;
-        pntvec t(1.0, 2.0, 3.0);
-        ss << t;
-        std::string ssValue = ss.str();
-        if(ssValue.compare("(1, 2, 3)") != 0) throw -1;
+      pntvec t (10.0, 20.0, 30.0);
+      pntvec p;
+      p = -t;
+      if(t.get_x() != 10 || t.get_y() != 20 || t.get_z() != 30)
+	{
+	  throw (-1);
+	}
+     if(p.get_x() != -10 || p.get_y() != -20 || p.get_z() != -30)
+	{
+	  throw (-1);
+	}
     }
-    catch(int e)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void get_x_test(int &errorNumber)
+void test_distance_to (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1(1.0, 2.0, 3.0);
-        double x = point1.get_x();
-        if(x != 1.0) throw -1;
+      pntvec t (1.0, 0.0, 1.0);
+      pntvec p (-1.0, -1.0, -1.0);
+      double x = t.distance_to(p);
+      if (x != 3.0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void get_y_test(int &errorNumber)
+void test_ostream (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1(1.0, 2.0, 3.0);
-        double y = point1.get_y();
-        if(y != 2.0) throw -1;
+      std::stringstream ss;
+      pntvec t (1.0, 2.0, 3.0);
+      ss << t;
+      std::string string_stream_string;
+      string_stream_string = ss.str();
+      if (string_stream_string.compare("(1, 2, 3)") != 0)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void get_z_test(int &errorNumber)
+void test_istream (int &error_methods)
 {
-    try
+  try
     {
-        pntvec point1(1.0, 2.0, 3.0);
-        double z = point1.get_z();
-        if(z != 3.0) throw -1;
+      std::stringstream ss;
+      pntvec t;
+      ss << "1.0 2.0 3.0";
+      ss >> t;
+      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3)
+	{
+	  throw (-1);
+	}
     }
-    catch(int err)
+  catch(int e)
     {
-        ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_multiplying_by_fraction(int &errorNumber)
+void test_multiplying_by_fraction  (int &error_methods)
 {
   try
     {
@@ -290,11 +365,11 @@ void test_multiplying_by_fraction(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_chaining_assignment (int &errorNumber)
+void test_chaining_assignment (int &error_methods)
 {
   try
     {
@@ -316,11 +391,11 @@ void test_chaining_assignment (int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_printing_with_decimals (int &errorNumber)
+void test_printing_with_decimals (int &error_methods)
 {
   try
     {
@@ -336,11 +411,11 @@ void test_printing_with_decimals (int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_multiply_by_a_number_slightly_bigger_than_one(int &errorNumber)
+void test_multiply_by_a_number_slightly_bigger_than_one (int &error_methods)
 {
   try
     {
@@ -355,11 +430,11 @@ void test_multiply_by_a_number_slightly_bigger_than_one(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_very_small_numbers(int &errorNumber)
+void test_very_small_numbers (int &error_methods)
 {
   try
     {
@@ -372,11 +447,11 @@ void test_very_small_numbers(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_istream_wtih_multiple_pntvecs(int &errorNumber)
+void test_istream_wtih_multiple_pntvecs (int &error_methods)
 {
   try
     {
@@ -392,11 +467,11 @@ void test_istream_wtih_multiple_pntvecs(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_ostream_wtih_multiple_pntvecs(int &errorNumber)
+void test_ostream_wtih_multiple_pntvecs (int &error_methods)
 {
   try
     {
@@ -412,11 +487,11 @@ void test_ostream_wtih_multiple_pntvecs(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_distance_to_with_the_same_point(int &errorNumber)
+void test_distance_to_with_the_same_point (int &error_methods)
 {
   try
     {
@@ -435,11 +510,11 @@ void test_distance_to_with_the_same_point(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_distance_to_with_negative_points(int &errorNumber)
+void test_distance_to_with_negative_points (int &error_methods)
 {
   try
     {
@@ -458,11 +533,11 @@ void test_distance_to_with_negative_points(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_negating_a_negative_pntvec(int &errorNumber)
+void test_negating_a_negative_pntvec (int &error_methods)
 {
   try
     {
@@ -475,11 +550,11 @@ void test_negating_a_negative_pntvec(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_subtract_a_negative_pntvec(int &errorNumber)
+void test_subtract_a_negative_pntvec (int &error_methods)
 {
   try
     {
@@ -494,11 +569,11 @@ void test_subtract_a_negative_pntvec(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
 
-void test_subtract_a_non_whole_number(int &errorNumber)
+void test_subtract_a_non_whole_number (int &error_methods)
 {
   try
     {
@@ -513,7 +588,6 @@ void test_subtract_a_non_whole_number(int &errorNumber)
     }
   catch (int e)
     {
-      ++errorNumber;
+      ++error_methods;
     }
 }
-
