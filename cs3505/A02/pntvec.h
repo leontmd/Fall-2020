@@ -37,7 +37,7 @@ public:
   pntvec operator-(const pntvec& rhs) const;
 
   //Overloaded multiplication operator
-  pntvec operator*(double) const;
+  pntvec operator*(const double&) const;
 
   //Overloaded negation operator
   pntvec operator-() const;
@@ -57,7 +57,7 @@ public:
   //Overloaded output operator
   friend std::ostream& operator<<(std::ostream& out, const pntvec& object)
   {
-    out << object.x << " " << object.y << " " << object.z << "\n";
+    out << "(" << object.x << ", " << object.y << ", " << object.z << ")";
 
     return out;
   }

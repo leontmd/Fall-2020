@@ -20,7 +20,7 @@ pntvec::pntvec(double x_coord, double y_coord, double z_coord)
 //Definition of the copy constructor
 pntvec::pntvec(const pntvec& p)
 {
-    this->x = p.z;
+    this->x = p.x;
     this->y = p.y;
     this->z = p.z;
 }
@@ -58,7 +58,7 @@ pntvec pntvec::operator-(const pntvec& rhs) const
 }
 
 //Definition of overloaded multiplication operator
-pntvec pntvec::operator*(double d) const
+pntvec pntvec::operator*(const double& d) const
 {
     pntvec ret;
     ret.x = this->x * d;
