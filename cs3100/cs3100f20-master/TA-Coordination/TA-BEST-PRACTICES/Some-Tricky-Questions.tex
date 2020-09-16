@@ -1,0 +1,232 @@
+
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx,url}
+\usepackage{proof}
+\usepackage{framed}
+\usepackage{etaremune}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{paralist}
+
+% 1. To get version suitable for students to populate,
+%    remove the contents of the \ignoreSoln{..body..}
+%
+% 2. To get a version suitable for generating PDF 
+%    without solutions, remove the #1 below
+%
+% 3. To generate solutions, keep the #1 below
+%
+% 4. Assigned grader fills \ignoreSoln{..body..}
+%    and also provides his/her feedback to student
+%    and policy followed for point deduction
+%    So design policy before grading begins.
+
+\newcommand{\ignoreSoln}[1]{#1}   
+%\newcommand{\ignoreModel}[1]{#1} 
+
+
+\newcommand{\bigset}[2]{\big\{\;#1\;:\;#2\;\big\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Np}{\mathbb{N^{+}}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\DeclareMathSizes{14}{14}{14}{14}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+%\renewcommand{\qedsymbol}{\filledbox}
+
+
+\begin{center}
+\begin{large}
+  CS 3100, Fall 2020 -- Some Tricky Questions \\
+  \ \\
+  \ \\  
+      {  {\Large\bf NAME: } \hfill {\Large\bf UNID: }\hspace{4cm} }
+      \ \\
+  \ \\      
+\end{large}
+
+
+\end{center}
+\date{}
+
+\subsubsection*{Tricky Concepts and Practical Issues}
+
+\begin{compactitem}
+\item Some don't know Python; watch out!
+\item Some come from the Windows world; they are troubled
+  by Unix-style paths (forward-slash, etc). Largely avoided by
+  Colab.
+\item General weakness about strings. Things like
+  empty set ($\emptyset$),
+  empty string ($\varepsilon$),
+  empty set containing empty string ($\{\varepsilon\}$),
+  and set containing empty set  ($\{\emptyset\}$)
+  are sure to confuse many.
+  %
+  While there is no standard recitation section,
+  {\bf why not dedicate TA office hours early in the semester
+    when you have no grading work to going over these?}
+  %
+  I'll prepare helpful recitation notes.
+  
+\item Concatenation versus intersection is confused.
+\item Finite versus infinite is confused. The notions of
+  finite/infinite sets of finite/infinite-strings (all combinations
+  are worth thinking of) will confuse them.
+\item In particular, the Kleene-star
+  operation forms {\bf infinite sets of finite strings} 
+\item The fact that a set can be non-regular but a superset
+  of that set can be regular
+
+\end{compactitem}
+
+\subsubsection*{Tricky Questions}
+
+\noindent Please try these problems ahead of time.
+          {\bf IMPORTANT: Ask me for help if you get stuck.} {\em Please do not delay asking
+          for help}.
+          I'm OK if you don't know parts of this question; I'll help you. 
+
+\begin{compactenum}
+
+\item What are the differences, if any,
+  between the language
+  $L_1= (\{0\}\cup\{1\})^*$
+  and the regular expression
+  $(0+1)^*$? Learn to explain to me, then the student.
+
+\item  How do the above relate to the language
+  $L_2= (\{0\}^* \{1\}^*)^*$
+  and the regular expression
+  {\tt (0* 1*)*}? Learn to explain to me, then the student.
+
+\item List 10 strings in numeric order from $L_1$ and $L_2$.
+
+\item Argue that $L_1 = L_2$ --- first informally, then via a rigorous proof.
+  Your proof can take advantage of the fact that $\{0,1\}\subseteq L(0*\; 1^*)$
+  where $L$ stands for ``Language.'' (You can come back to this rigorous proof later.)
+
+  
+\item  Learn how to explain this NFA to a student. Walk through each line in the
+  NFA's construction.
+%--  
+\begin{verbatim}
+testnfa = md2mc('''
+NFA
+I  : 0 -> I
+I  : 1 -> I, S0, A
+A  : 0 -> I, A
+A  : '' -> I
+S0 : 0  -> F
+''')
+dotObj_nfa(testnfa, FuseEdges=True)
+ \end{verbatim}
+
+\item Now, learn how to explain the drawing of {\tt testnfa} generated above to the student.
+
+\item Learn how to explain to the student how this construction works. That is, how exactly is
+{\tt testnfa} being turned into the DFA called {\tt d}? Present
+the subset construction
+algorithm to me (then later, the student).
+%--
+\begin{verbatim}
+
+d = nfa2dfa(testnfa)
+
+dotObj_dfa(d)
+
+ \end{verbatim}
+
+
+\item How is this DFA getting minimized? Learn the full Dynamic Programming algorithm and
+explain it to me.
+%
+\begin{verbatim}
+
+md = min_dfa(d)
+
+dotObj_dfa(md)
+
+ \end{verbatim}
+
+\item Show that if a language is regular, its complement is regular.
+Define all the terms involved.
+
+\item Building DFA for bit-strings that arrive at you MSB-first
+  where the value of the number seen so far must be equal to $0$
+  modulo $3$. Study this construction from the book and make sure you follow it,
+  and then  learn how to explain to the student.
+
+\item Building DFA for bit-strings that arrive at you LSB-first
+  where the value of the number seen so far must be equal to $0$
+  modulo $3$.  Study this construction from the book and make sure you follow it.
+  The book only sketches a part; please finish it. Ask my help if you wish.
+
+\item Showing that the concatenation of two context-free
+  languages is context-free.
+
+\item ({\bf Hard, till you see how easy it is}) Showing that
+  the concatenation of two non-regular languages can be regular.
+ %
+ Hint: How about if you took the language $L = \{0^i \;:\; i\; {\rm is}\; {\rm prime}\}$.
+ First, show $L$ is not regular. Then consider $\overline{L}$ ($L$'s complement). Can it be regular?
+ Then consider $L\overline{L}$: what strings are in it? Finish your proof.
+  
+\item Show that the language
+  \[ \{ a^i b^j c^k \;:\; i,j,k\ge 0,\; {\rm and}\; (i==3?(j==k):true) \}\]
+  cannot be shown to be non-regular via the textbook Pumping Lemma
+  that easily. However
+  \begin{compactitem}
+  \item If you intersected it with $b^*\; c^*$, the proof becomes
+    easy.
+  \item If you reversed the language, the proof becomes easy.
+  \end{compactitem}
+  %
+  Read the relevant parts from the book.
+
+\item Developing an NFA for the language of strings over $\{0,1\}$
+  where the $n$-th last bit is a $1$ (for various $n$). Do this in Jove.
+
+\item Show that if a language is context-free, its complement is not
+  necessarily context-free. You may argue by taking an example CFL
+  and show that its complement is not a CFL (actually prove it is not
+  a CFL). You'll need to use the CFL PL.
+
+\item Build a DTM for the language of strings of the form
+  $w\#x$ where $w$ is a substring of $x$.
+
+\item Next, build an NDTM for the above language. (Doing it for an NDTM
+  is easier.)
+
+\item How can you obtain a DFA $D$ corresponding
+to the middle-third of all strings accepted by another DFA $D^{'}$?
+\end{compactenum}
+
+\end{document}

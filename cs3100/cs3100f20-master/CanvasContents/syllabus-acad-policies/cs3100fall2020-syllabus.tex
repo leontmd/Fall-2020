@@ -1,0 +1,409 @@
+\documentclass[12pt]{article}
+
+\usepackage{url}
+\usepackage{paralist}
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+%\newcommand{\para}[1]{{\vspace{4pt}\noindent\bf{#1.}\hspace{4pt}}}
+\newcommand{\para}[1]{{\vspace{4pt}\noindent\bf{#1:}}}
+\newcommand{\denselist}{\vspace{-5pt} \itemsep -2pt\parsep=-1pt\partopsep -2pt}
+
+
+\begin{document}
+
+
+\begin{center}
+{\Large CS 3100: Models of Computation  \\ Course Syllabus and Administrative Details\\
+\vspace{2mm}
+Fall 2020}\footnote{Syllabus adapted from Spring CS 2100's}
+\end{center}
+
+\begin{sl}
+\subsubsection*{Updates of 8/26/20}
+Please join Piazza for conducting Live Q\&A -- the recommended
+way to ask questions and
+discuss with classmates during my lecture.
+%
+I'll monitor the questions during class (the TAs will, mainly).
+%
+I'll go thru these posts after class
+and highlight some for follow-up discussions as necessary.
+%
+I'll limit Zoom messages to be private posts to me, in response to
+periodic questions I'll be displaying on my slides. More on
+Section~\ref{sec:messaging}.
+\end{sl}
+
+\section{We care for your safety!}
+
+This class is fully online, thus permitting
+physical isolation during these trying times
+caused by COVID-19.
+%
+Unfortunately, it also robs us of opportunities
+for inter-personal interactions, and so please stay
+in sync with as many online lectures as you can through
+enthusiastic participation.
+
+
+Kindly guard your physical and mental health, and we wish you
+and your near and dear all the strength to cope
+with the added stress,
+seeking help from
+\url{https://coronavirus.utah.edu} and
+\url{counselingcenter.utah.edu}
+as needed.
+%
+The Center for Disability and Access now has an online portal
+\url{https://disability.utah.edu/online.php}
+through which you can seek accommodations.
+%
+See the instructor's contact info below.
+
+
+
+\section{Important Information}
+
+\para{Class Website} Canvas (available through CIS)\\
+\noindent\textbf{All course materials are available on Canvas or links pointed to from Canvas.}
+The main URL used will be
+\url{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}
+and hereafter called \href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}.
+%
+In particular, given that this class has Jupyter-based software for Automata
+(called ``Jove''), and much of the learning is accomplished by interacting
+with this software, we will
+provide you detailed lesson plans via the above Github site.
+%
+We will also be setting and delivering all assignments through this site.
+%
+There will be a brief PDF that summarizes the assignment in the assignment
+submission portal.
+%
+{\em For details on Jove, Colab, and Python, see Section~\ref{sec:detailed-info}.}
+
+
+
+\para{Instructor} Ganesh Gopalakrishnan \\
+\indent Physical Office: None (The class is virtual) \\
+\indent Contact:  Via {\bf Canvas} Email
+(use {\tt ganesh@cs.utah.edu} if you cannot get onto Canvas for some reason).
+
+\para{Class Meeting Time} 
+\begin{compactitem}
+\item Tuesdays, Thursdays, 10:45 AM - 12:05 PM
+\item[] Class assembles on Zoom. Zoom Links are published on Canvas.
+  {\em Please attend as many lectures as you possibly can.}
+  We will try and keep Zoom cloud recordings on Canvas
+  (to be FERPA-compliant).
+  They will be deleted after 30 days.
+\end{compactitem}
+
+\para{TA And Instructor Office Hours:}
+On Zoom, and the timings + Zoom links are maintained
+at \url{bit.ly/cs3100f20_office_hours}
+
+
+\para{Textbook} (required) Authored by the instructor,
+and a PDF is provided with permission of the publisher free
+of charge on Canvas. The PDF is for use only during Fall 2020.
+
+
+\para{Important Dates:\/} Kindly see \href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}
+
+
+\para{Final Course Grade (IMPORTANT)}
+\begin{compactitem}
+% \item {\bf Participation:} 5 points. 
+% \item[]  I am requiring one submission per lecture.
+%   A total of 20 submissions over the semester earns you full points.
+%   %
+%   {\em There is no fixed submission}; I am seeking a short
+%   submission of an {\tt .ipynb} notebook capturing your understanding
+%   of a lecture.
+%   %
+%   Kindly visit \verb|03_Advanced_DFA/Another_Illustration.ipynb|
+%   and that is roughly the ``short'' size I am looking for!
+%   %
+%   What items may you submit? Here are your choices:
+%   \begin{compactitem}
+%   \item A Jove notebook
+%     that contains a simple {\em variant} of an example that we discussed
+%     in class.
+%     Fully run this on Colab, download the {\tt .ipynb} file and submit.
+%     
+%   \item Some of you may want to say something about a concept you learned.
+%     Even these must be typed in markdown notation into a notebook.
+%     
+%   \end{compactitem}
+% \item[] I will browse all your submissions, but 
+%   only provide feedback selectively.
+
+\item One ungraded survey issued on Canvas roughly weekly; 15 are {\em required};
+  may qualify for bonus points.
+\item 14 Quizzes (top 10 count; 2 points each), for 20 points.
+\item 12 Assignments (top 10 count, 4 points each), for 40 points.
+\item[]
+\item[] {\bf HOW TO SUBMIT ASSIGNMENTS}
+  \begin{compactitem}
+  \item Put all the items you are asked to submit in a folder whose
+    name is also specified clearly in the assignment submission PDF.
+  \item Zip up that folder. Instructions to zip a folder
+    are found on the web; here is
+    one example:
+    \href{https://www.hellotech.com/guide/for/how-to-zip-a-file-mac-windows-pc}{HERE}.
+  \item Turn in that single Zipped folder.
+  \item Our assignment submission portal will accept only ONE Zip file!
+  \end{compactitem}
+\item[]  
+\item MT-1 for 12 points; 9/22/20 (exam is take-home)
+\item MT-2 for 12 points; 10/22/20 (exam is take-home)
+\item Finals for 16 points (Exam Thursday 12/10/20, 10:30am - 12:30pm on Canvas)
+\end{compactitem}
+\noindent Website
+\href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}
+has the details of all assignments and exams. Kindly make a calendar out of them.
+
+\para{Prerequisites} CS 2100 or permission of instructor.
+
+
+
+\section{Course Information}
+
+CS 3100 provides 
+you a rigorous introduction to various
+models of computation.
+The presentation will be hands-on using
+Jupyter notebooks (collectively
+called ``Jove'') authored by the author,
+with help in strategic aspects by his students
+(e.g. Jove's animation by Paul Carlson; many
+Jove Automata defined by Ian Briggs; etc. A
+fuller list is in his book's preface.)
+%
+Both Jupyter and Jove will be used interchangeably
+and largely means the same; however,
+the latter connotes the particular packaging
+of learning material offered in this course
+(e.g., specific conventions and path-settings
+needed for the course software to work).
+
+
+\para{Fair Warning} The pacing in this class is brisk.
+Students should be aware that not all of the topics they
+need to know will be covered during lectures.
+Students should spend a considerable amount of time reading,
+watching videos, studying, and solving problems outside of lecture.
+%
+Also this is a {\em flipped class} in that a student who comes
+to class without having done the pre-assigned work is likely to struggle
+and may not follow the couse material.
+
+\section{Course Materials}
+
+\para{Website} The class website
+is always under development, with updates to the class schedule,
+course notes, homework specifications, and more, occurring regularly.
+It is critical that students become familiar with the class website
+right away and plan to visit it several times a week, at a minimum.
+
+The URLs are as follows:
+\begin{compactitem}
+\item  Website for External Reference: \url{bit.ly/cs3100fall2020} (contains this file's PDF
+   and nothing more!)
+\item Official Website with Weekly Lessons and Dates: What lists when you visit
+  the
+\href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}
+\end{compactitem}
+
+\para{Personal computers} The course needs the use of a computer
+that can access the web. Many exercises can be completed
+based on Google's Colab without any software installations.
+The student is better off installing the Jove software
+on their own laptop, as it runs faster and does not need web
+connectivity (except for things like watching embedded Youtube videos).
+
+Installation information is kept at
+\href{https://github.com/ganeshutah/Jove/tree/master/For_The_Public/Classic}
+{Jupyter\_Notebook\_Installation.pdf}
+
+
+\section{Required Work Each Week}
+\label{sec:messaging}
+
+\begin{compactitem}
+\item {\em Please participate in each lecture} by posting a
+  on the Piazza Live Q\&A channel.
+  %
+  I'll monitor the questions during class.
+  %
+  Please confine Zoom messages to {\em private} replies to questions
+  that I'll ask you
+  during the lecture.
+
+\item I will invite participation from students by running a Colab session of their own,
+  and asking them to try a few things. If it works, you can give a {\bf thumbs-up}
+  to acknowledge me.
+  
+\item The student must monitor the items listed in the
+  \href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}, as things may change   
+ frequently.
+
+\item They must do the quizzes that pertain to required reading +
+  video-watching and Jove-notebook practice {\bf before} a pair of
+  lectures. Unless you run these Jove notebooks and do the reading,
+  you will not be able to do the quizzes successfully.
+
+\item The lectures will further drive the point home, leaving you with
+  an assignment to solve and submit each week.
+
+\item This schedule will be punctuated by two midterm exams whose coverage
+  is clearly mentioned. The final exam will cover the last third of the
+  course (roughly) but will also have some questions from prior
+  portions (to check your higher level assimilation of ideas).
+\end{compactitem}
+
+\noindent Suggested steps for approaching CS 3100 homework assignments:
+
+\begin{enumerate}\denselist
+\item Read the relevant sections of the textbook in a timely way.
+\item Be on top of the Jove notebook practice.
+  The URL
+  \url{https://github.com/ganeshutah/Jove/tree/master/For_The_Public}
+  (the ``Jove Website for Others'')
+  contains additional examples that you can take advantage of.
+\item Each assignment will be accompanied by detailed instructions
+  on what is expected. Ask for timely clarifications.
+\item If you are still struggling after step 4, make use of the
+  instructor's office hours and/or the TA help hours
+  (see the class website for schedules).
+\end{enumerate}
+
+Homework assignments are to be done independently.
+It is acceptable for students to discuss how to solve problems
+with classmates, but copying solutions is considered academic misconduct.
+It is the student’s responsibility to ensure the successful and timely
+submission of each assignment via 
+\textbf{Canvas}.
+%
+Corrupted or missing files are not grounds for extensions —
+double-check your submissions and save a digital copy of all
+of your work in your CADE account.\\
+
+\para{Regrades} 
+Students who wish to appeal a score on a homework assignment or an in-class quiz must do so within \textit{one week} of receiving the score via
+Gradescope or Canvas.\\
+
+\para{Letter grades} 
+The following table is used to associate numerical scores with the corresponding letter grade. \textbf{Note the lack of rounding}. 
+Let $x$ denote a student's numerical score. 
+
+\noindent
+{\bf A} $100 \geq x \geq 93$ {\bf A-} $93 > x \geq 90$ \\	
+{\bf B+} $90 > x \geq 87$ {\bf B} $87 > x \geq 83$ {\bf B-} $83 > x \geq 80$ \\
+{\bf C+} $80 > x \geq 77$ {\bf C} $77 > x \geq 73$ {\bf C-} $73> x \geq 70$ \\
+{\bf D+} $70 > x \geq 67$ {\bf D} $67 > x \geq 63$ {\bf D-} $63 > x \geq 60$ \\
+{\bf E} $60 > x$\\
+
+\section{Getting Help}
+
+To get help understanding course material, students may see the Teaching Assistant(s) during TA Help Hours, see the instructor during Office Hours, post a question to the Q\&A forums on Piazza (https://piazza.com), or contact the course staff directly (also via Piazza).
+%
+{\bf Canvas will be used only for teacher/student/TA emails. Canvas
+  will not be used for any discussions.}
+
+
+We will not be monitoring Piazza during the lectures, nor do we recommend
+that you be distracted by it!
+
+
+\section{Policies and Guidelines}
+
+\begin{compactitem}\denselist
+\item CS 3100 Academic Misconduct Policy: See on Canvas.
+
+\item School of Computing Policies and Guidelines: \\
+  \small{\url{https://handbook.cs.utah.edu/2019-2020/Academics/policies.php}}
+  
+\item College of Engineering Guidelines:\\
+  \small{\url{www.coe.utah.edu/students/academic-affairs/academics/semester-guidelines}}
+  
+\item UofU Student code:\\
+  \small{\url{www.regulations.utah.edu/academics/guides/students/studentRights.html}}
+  
+\end{compactitem}
+Students should read and understand each of these documents, asking questions as needed.
+
+
+
+
+\section{Detailed Info on Colab, Jove, and Python}
+\label{sec:detailed-info}
+
+
+A file that ends with extension {\tt .ipynb} is called {\em a Jupyter notebook}.
+Sometimes we will also call it the {\em Jove notebook} or
+sometimes merely ``{\em a notebook file}.''
+  %
+Here are the steps to execute a  notebook file.
+%--
+\begin{compactitem}
+  
+\item Click on 
+\href{https://github.com/ganeshutah/Jove/tree/master/For_CS3100_Fall2020}{Jove Website for Class}
+  and browse it via a browser. The contents of the README will be
+  listed after the directories (folders). That tells you what you'll be doing each week.
+
+\item Next, (if you don't already have it), obtain a Colab extension to your browser:
+  \begin{compactitem}
+  \item Here is the \href{https://chrome.google.com/webstore/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo?hl=en}{Chrome Colab Extension}
+  \item Here is the \href{https://addons.mozilla.org/en-US/firefox/addon/open-in-colab/}{Firefox Colab Extension}
+  \end{compactitem}
+
+\item When you are visiting a {\em notebook file} ({\tt .ipynb file})
+  via {\em Github}'s file listing, click on the Colab extension. This
+  will load the file contents onto Colab, and then you can execute that
+  file under Colab.
+  
+\item {\em Please become familiar with our textbook!} It is your most important resource
+  in this class, and is required regular reading!
+  %
+  Our book summarizes a few aspects of Python, and also points to a good tutorial.
+  It also summarizes virtually all the Jove functions in its Appendices.
+
+  
+\item  To know more about Colab, kindly visit the
+  \href{https://colab.research.google.com/notebooks/intro.ipynb#}{Colab Tutorial}.
+  You will be given working knowledge of Colab during our lectures.
+
+\end{compactitem}
+
+
+\subsection{Basic Python/Colab Experience You Need}
+You'll need only a few facilities, and they are fully described here:
+
+\begin{compactenum}
+\item Setting up a browser extension: see above.
+\item Click the browser extension as said above: you are put in a Python environment
+  in Colab.
+\item Then you will need the facilities to execute cells that
+  are clearly mentioned in this video
+  by Corey Schafer at \url{https://youtu.be/HW29067qVWk}.
+  %
+  You can pretty much go to the {\em 4:00 min mark} and directly
+  learn how to use the keyboard shortcuts to run the cells.\footnote{You may
+    install Jupyter on your laptop following instructions
+    kept at {\tt Jove/For\_The\_Public/Classic/Jupyter\_Notebook\_Installation.pdf.}}
+\item You'll occasionally need to write markdown commands. Learn that from
+\item[]    
+{\footnotesize \verb|For_CS3100_Fall2020/01_Computability_Languages/1a_Jupyter_Basics.ipynb|}
+
+\item Finally, for all assignments, you must
+  click \verb|File->Download .ipynb|, and save the notebook.
+\end{compactenum}
+
+\end{document}
+%--end
+

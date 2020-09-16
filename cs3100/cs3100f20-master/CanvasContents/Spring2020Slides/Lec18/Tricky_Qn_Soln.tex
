@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+{\hfill {\bf Sipser's Problem 2.25} \hfill}
+
+Suppose we are given a CFG $G$
+
+\begin{verbatim}
+S -> a S b | b Y | Y a
+Y -> b Y | a Y | ''
+\end{verbatim}
+
+\begin{enumerate}
+\item If $L(G)$ is regular, simplify it down to a regular expression.
+\item If $L(G)$ is not regular, obtain a Pumping Lemma proof for that fact.
+\end{enumerate}
+
+\noindent{\bf Solution:\/} It is regular. We will simplify it step by step.
+
+\begin{enumerate}
+
+\end{enumerate}
+
+
+\end{document}

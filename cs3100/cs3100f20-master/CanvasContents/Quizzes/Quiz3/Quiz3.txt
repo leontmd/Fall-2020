@@ -1,0 +1,263 @@
+You all must have realized by now that getting ready each
+week depends on having run the notebooks set apart for
+the week. In that vein, this quiz depends on your running
+these notebooks and reading these chapters:
+
+1) Basic_NFA.ipynb in 04_NFA
+
+2) Basic_NFA2DFA.ipynb in 05_NFA2DFA (also clearly
+   explains Brzozowski's minimization in Basic_NFA2DFA.ipynb)
+
+3) Chapter 7
+
+
+- 1 ------------------------------------------------------
+
+These are true facts pertaining to NFA and DFA.
+
+Below, when I say "nth bit is a 1", it denotes the language
+
+{0,1}^{n-1} 1 {0,1}*
+
+and
+
+"nth-last bit is a 1" denotes the language
+
+{0,1}^* 1 {0,1}^{n-1}
+
+
+[n] One can complement the language of an NFA by
+    converting final states to non-final states
+    (and vice-versa)
+
+[y] In general, NFA have fewer states than their
+    equivalent DFA
+
+[n] The most compact NFA for
+    "nth bit is a 1" and
+    "nth-last bit is a 1" 
+    exponentially differ in the number of states
+    (one of these must have many more states than the other)
+
+[y] DFA for "nth bit is a 1 and nth-last bit is a 1"
+    exponentially differ in the number of states
+
+
+- 2 ------------------------------------------------------
+
+These are true facts pertaining to NFA
+
+
+[y] Four distinct 2-state NFAs are possible. The two
+    states of these NFA can both be initial states.
+    Further, it is possible to have no transitions
+    at all out of these states.
+
+[n] NFA without epsilon transitions are less powerful
+    than NFA with epsilons (by "less powerful" we mean
+    there are languages that cannot be described)
+
+[n] All DFA are also NFA, including in the nature of
+    their Delta function
+
+[y] Practically useful NFA can have multiple initial
+    states and final states that cannot be reached
+    from some initial state.
+
+- 3 ------------------------------------------------------
+
+These facts are true of NFA
+
+[y] It is extremely easy to obtain the union of two NFA
+    N1 and N2: simply draw them one above the other, changing
+    nothing at all (perhaps renaming the states of one
+    NFA to avoid name-clashes with the states of the
+    other NFA).
+
+[n] It is extremely easy to obtain the concatenation
+    of two NFA N1 and N2: basically draw NFA2 to the
+    right of NFA1 and put "bridge epsilon
+    transitions" from  the final state of N1 to
+    every initial state of N2; and do nothing else.
+
+[y] The most general way to complement an NFA is by
+    converting it to a DFA first, and then complementing
+    that DFA
+
+[n] It is as easy to compute the intersection of two
+    NFA: simply follow the same algorithm as we
+    followed for DFA intersection
+
+- 4 ------------------------------------------------------
+
+These are true of the "subset construction algorithm"
+(Page 87). Note that the last line of this algorithm
+may unfortunately have moved to Page 88 (so don't
+ignore the last line!)
+
+[y] Given an N-state NFA, it can generate a
+    language-equivalent DFA with 2^N states
+
+[n] Given an N-state NFA, it can generate a
+    language-equivalent DFA with at-most N states
+
+[n] Given an N-state NFA, it can generate a
+    minimal DFA corresponding to the NFA
+
+[y] Even if one assumes that computing Eclosure
+    and applying Delta have negligible cost,
+    this subset construction algorithm has
+    a runtime O(2^N)
+
+- 5 ------------------------------------------------------
+
+These are true facts pertaining to NFA and DFA
+
+
+[n] All DFA with multiple final states can be expressed
+    as DFA with a single final state (while retaining the
+    language)
+
+[n] If one reverses a DFA, one obtains an NFA with a
+    single initial state
+
+[y] All NFA with multiple initial states can be expressed
+    as NFA with a single initial state
+
+[y] All NFA with multiple final states can be expressed
+    as NFA with a single final state (while retaining the
+    language)
+
+
+
+- 6 ------------------------------------------------------
+
+One can minimize a DFA through these steps using
+Brzozowski's minimization algorithm:
+
+[n] Determinize followed by Reverse is sufficient,
+    if the given DFA's language L is such that
+    L = reverse(L).
+
+[y] Reverse followed by Determinize is sufficient,
+    if the given DFA's language L is such that
+    L = reverse(L).
+
+[y] Reverse followed by Determinize is not sufficient,
+    if the given DFA's language L is such that
+    L != reverse(L). Then one has to do another
+    round of Reverse followed by Determinize.
+
+[n] Determinize followed by Reverse is not sufficient,
+    if the given DFA's language L is such that
+    L != reverse(L). Then one has to do another
+    round of Determinize followed by Reverse
+
+- 7 ------------------------------------------------------
+
+These facts are true of NFA_ends0101 (defined in one of
+the above notebooks)
+
+[n] When this NFA's delta is applied to (I,1),
+    it yields state I.
+
+[n] When this NFA's delta is applied to (I,1),
+    it yields the set of states {{I}}.
+
+[y] step_nfa(NFA_ends0101, 'F','1') returns {}.
+
+[y] When the last cell that contains
+    test_run_nfa_int(NFA_ends0101, NFA_3rdlast_1)
+    is run, then NFA widgets are invoked, and
+    the tool asks for an input. One can then
+    type in an input such as 01010101. Then
+    when one sets the slider for "n" at 4,
+    the string seen by the NFA is 0101 (picks
+    the first four symbols of 01010101).
+
+- 8 ------------------------------------------------------
+
+When the last cell that contains
+test_run_nfa_int(NFA_ends0101, NFA_3rdlast_1)
+is run, then NFA widgets are invoked, and
+the tool asks for an input.
+
+When one provides 01010101 as input and moves the
+slider, here is what one observes at various slider
+value settings:
+
+[y] At n=4, the last "States reached" entry is printed
+    as {'S01', 'I', 'F'} 
+
+[n] At n=4, the last "States reached" entry is printed
+    as {'S010', 'I', 'S0'}
+
+[y] At n=3, the last "States reached" entry is printed
+    as {'S010', 'I', 'S0'}, and this is a non-final
+    state because this slider setting is feeding the
+    string 010 to this NFA
+
+[n] At n=3, the last "States reached" entry is printed
+    as {'S01', 'I', 'F'} 
+
+- 9 ------------------------------------------------------
+
+Look at the NFA called Fig77 (book's Figure 7.7)
+
+Here are true facts about either this NFA
+(or, in some cases, any NFA at all). Choose
+from the answers below.
+
+* [n] Eclosure(I) = {A,B,C,G}
+
+* [y] Eclosure(I) = {I,A,B,C,G}
+
+* [y] Eclosure of any state s is non-empty
+
+* [n] An NFA accepts a string x if there is a path
+  labeled by x from all its initial states
+  to all its final states
+  (with possible Epsilons inserted before
+  and after every symbol within x)  
+
+- 10 ------------------------------------------------------
+
+Look at the NFA called Fig77 which is in the book's Figure 7.7
+
+If one performs these two commands (you may have to insert
+and perform these commands):
+
+C1) Fig77DFA = nfa2dfa(Fig77, STATENAME_MAXSIZE = 40)
+C2) dotObj_dfa(Fig77DFA, STATENAME_MAXSIZE = 40)
+
+one can see these facts (and one can infer other facts
+by merely looking at the NFA):
+
+[n] The language of this NFA is closed under reversal
+    (if this NFA's language is L, then L = reverse(L)).
+
+[n] State A_B_C_G_I of Fig77DFA
+    represents the Eclosure of state I of the NFA,
+    and it transitions to
+    state A_B_C_D_F_G of the DFA on a 0.
+    
+[y] The DFA printed by command C2 above can be minimized
+    to shrink it further.
+
+[y] The Eclosure of state D is {D,G,A,C,B} and the state
+    corresponding to this in the DFA is not a final state.
+
+
+
+
+- END ------------------------------------------------------
+
+
+    
+
+
+    
+
+
+
+

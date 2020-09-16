@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{pda2} \PYG{o}{=} \PYG{n}{md2mc}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}PDA}
+\PYG{l+s+s1}{I : (,\PYGZsh{}; (\PYGZsh{} | ),\PYGZsh{}; )\PYGZsh{} \PYGZhy{}\PYGZgt{} A}
+\PYG{l+s+s1}{A : (,(; (( | ),); )) | (,); \PYGZsq{}\PYGZsq{} | ),(; \PYGZsq{}\PYGZsq{} \PYGZhy{}\PYGZgt{} A}
+\PYG{l+s+s1}{A : \PYGZsq{}\PYGZsq{},\PYGZsh{}; \PYGZsh{} \PYGZhy{}\PYGZgt{} F}
+\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{DO\PYGZus{}pda2} \PYG{o}{=} \PYG{n}{dotObj\PYGZus{}pda}\PYG{p}{(}\PYG{n}{pda2}\PYG{p}{,} \PYG{n}{FuseEdges}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}True\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{DO\PYGZus{}pda2}\PYG{o}{.}\PYG{n}{render}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}DO\PYGZus{}pda2\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{DO\PYGZus{}pda2}
+\end{Verbatim}

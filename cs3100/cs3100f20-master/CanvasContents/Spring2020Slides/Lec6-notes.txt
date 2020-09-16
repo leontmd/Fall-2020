@@ -1,0 +1,10 @@
+Theorem 4.6.1 : Pumping Lemma for Regular Languages.
+• IF L is regular, then that IMPLIES
+• There is a natural number N such that
+• for any string w ∈ L where w is at least of length N,
+• we must be able to read out w as xyz
+• where y is non-empty (x and z could be empty)
+• and xy is confined to the first N steps of w
+• and furthermore, for all i≥0, xyiz ∈ L must be true.
+
+

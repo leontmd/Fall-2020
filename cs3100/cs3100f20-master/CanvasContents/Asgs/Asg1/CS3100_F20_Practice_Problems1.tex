@@ -1,0 +1,178 @@
+
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx,url}
+\usepackage{proof}
+\usepackage{framed}
+\usepackage{etaremune}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{paralist}
+\thispagestyle{empty}
+
+% 1. To get version suitable for students to populate,
+%    remove the contents of the \ignoreSoln{..body..}
+%
+% 2. To get a version suitable for generating PDF 
+%    without solutions, remove the #1 below
+%
+% 3. To generate solutions, keep the #1 below
+%
+% 4. Assigned grader fills \ignoreSoln{..body..}
+%    and also provides his/her feedback to student
+%    and policy followed for point deduction
+%    So design policy before grading begins.
+
+\newcommand{\ignoreSoln}[1]{#1}   
+%\newcommand{\ignoreModel}[1]{#1} 
+
+
+\newcommand{\bigset}[2]{\big\{\;#1\;:\;#2\;\big\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Np}{\mathbb{N^{+}}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\DeclareMathSizes{14}{14}{14}{14}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+%\renewcommand{\qedsymbol}{\filledbox}
+
+
+\begin{center}
+\begin{large}
+  CS 3100, Spring 2020, Practice Problems 1 -- NOT Graded -- discuss
+  \ \\
+%  \ \\  
+%      {  {\Large\bf NAME: } \hfill {\Large\bf UNID: }\hspace{4cm} }
+%      \ \\
+  \ \\      
+\end{large}
+
+
+\end{center}
+\date{}
+
+
+\noindent No submission is required; however be doing these problems
+throughout the semester. The pertinent set of these problems will be reviewed
+before each exam. {\bf The point values don't matter,} but I did not want to
+destroy that info (may give you an idea of relative difficulties).
+
+%=================================================================
+\begin{enumerate}
+
+\item Surprise! All the problems at the end of Chapter-2 have been worked
+  out for you! But first study them. After a good attempt on your
+  part, seek their solutions at
+  \url{bit.ly/Automata_Jove} under SolutionsToSelectedProblems.
+
+\item Surprise! A set of problems given out during previous midterms and final
+  exams have been solved and kept online at the above URL, as well.
+  
+  
+\item[] {\bf Language operations, counting.}
+  
+
+%-----------------------------------------------------------------
+\item{\bf (22 points)} \label{qn2}
+  %~~~parts~~~
+ \begin{enumerate}
+ \item {\bf 3 points:} \label{qn2a}
+   (We need to properly understand the notion of powersets. This question
+   helps you review that.)
+   %
+   Let $L=\{\varepsilon,a,c,ab\}$. How many elements are there in
+   ${\cal P}(L)$ (the powerset of $L$)? Justify your answer in 1-2 clear sentences.
+    
+
+  
+  \item {\bf 5 points:} \label{qn2b}
+    %
+    Define the $n$-fold cartesian product of a set $S$ to
+    be $S\times S\ldots S$ ($n$ times).
+    %
+    Given this definition,
+    is the cardinality of $\{a,\varepsilon\}^n$
+    less than, equal to, or greater than the
+    cardinality of the $n$-fold cartesian product
+    of $\{a,\varepsilon\}$ with itself?
+    %
+    Carefully justify your answer in a few bulleted sentences.
+ 
+   \item {\bf 3 points:} \label{qn2c}
+    What is $L^R$ where the superscript
+      $R$ denotes {\em reverse}? Write your answer out as a set.
+ 
+    \item {\bf 11 points:} \label{qn2d}\footnote{Question contributed by TA Thanhson.}
+      Show that $\{\varepsilon,a,b,c,\ldots,z\}^n$ has
+      $(26^{n+1}-1)/25$ elements.
+      %
+      Hint: This formula comes from series summation of
+      a geometric series: \\$(1+x+x^2+\ldots+x^n) = (x^{n+1}-1)/(x-1)$.
+ \end{enumerate}
+
+
+
+\item[] {\bf Properties of concatenation and Star.}
+ 
+\item{\bf (14 points total):}  \label{qn1}
+  %~~~parts~~~
+  Consider the language $M=\{\varepsilon,a,b\}$. 
+  \begin{compactenum}
+  \item \label{M-question}
+    {\bf (3 points)} \label{qn1a}
+    Show that $MM \neq  M$.
+    For two languages, $X$ and $Y$, $X\neq Y$ exactly when there is $s\in X$ that is
+    not in $Y$, or vice-versa.
+    Your answer must describe such an $s$ and justify in
+    a sentence or two.
+
+  \item 
+    {\bf (4 points)} \label{qn1b}
+    Argue that for all {\em non-empty}
+    languages $N$ (over any alphabet) that don't contain $\varepsilon$, it is true that $N\neq NN$.
+
+  \item 
+    {\bf (7 points)} \label{qn1c}
+    Argue that for a language $N$ over $\{a,b\}$ that contains $\varepsilon$,
+    $a$, and $b$, we can have $N=NN$
+    if and only if $N=\{a,b\}^*$.
+    %
+    {\em One approach:\/} Suppose not. That is, we are missing one string besides
+    $\varepsilon$, $a$, and $b$. Assume $N=NN$ still holds. Derive a contradiction.
+
+
+
+  \end{compactenum}
+
+
+
+\end{enumerate}
+%=================================================================
+
+\end{document}

@@ -1,0 +1,28 @@
+0) Problems
+   Slide for lec-3 updated
+   with pal* != pal
+ - DONE
+ 
+   pal* = sigma*
+ - DONE
+ 
+   write out language of first dfa "contains 01" as a language
+   using star and concat
+ - DONE
+
+ Slides for DFA
+
+ - DONE
+
+1) Practice problems for DFA (hard, exam-like)
+
+ - DONE
+
+2) Quiz-2 - DONE
+
+3) Survey-2 - DONE
+
+4) Basic and advanced DFA : recordings - done
+ - DONE
+
+5) Material for third week (basic practice material)
