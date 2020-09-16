@@ -3,8 +3,7 @@
 #include <cmath>
 #include "pntvec.h"
 
-int report_results (int &error_methods);
-void test_default_const (int &error_methods);
+void default_constructor_test(int &error_methods);
 void test_const (int &error_methods);
 void test_copy_const (int &error_methods);
 void test_get_x (int &error_methods);
@@ -31,18 +30,10 @@ void test_negating_a_negative_pntvec (int &error_methods);
 void test_subtract_a_negative_pntvec (int &error_methods);
 void test_subtract_a_non_whole_number (int &error_methods);
 
-/**
-   The main method calls each of the functions listed above once to test the functionality of
-   the pntvec object. See header comment for direct functionality of this function.
-
-   returns --
-   0 if there are no errors.
-   -1 if there are errors.
- */
 int main()
 {
   int error_methods = 0;
-  test_default_const(error_methods);
+  default_constructor_test(error_methods);
   test_const (error_methods);
   test_copy_const (error_methods);
   test_get_x (error_methods);
@@ -71,23 +62,20 @@ int main()
   return error_methods == 0 ? 0 : -1;
 }
 
-void test_default_const (int &error_methods)
+void default_constructor_test(int &error_methods)
 {
-  try
+    try
     {
-      pntvec t;
-      if(t.get_x() != 0 || t.get_y() != 0 || t.get_z() != 0)
-	{
-	  throw (-1);
-	}
+        pntvec t;
+        if(t.get_x() != 0 || t.get_y() != 0 || t.get_z() != 0) { throw -1; }
     }
-  catch(int e)
+    catch(int err)
     {
-      ++error_methods;
+    ++error_methods;
     }
 }
 
-void test_const (int &error_methods)
+void test_const(int &error_methods)
 {
   try
     {
