@@ -1,1 +1,0 @@
-to run program ./script.sh

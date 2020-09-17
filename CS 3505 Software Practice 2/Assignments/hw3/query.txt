@@ -1,9 +1,0 @@
-house
-car
-apple
-app
-dog
-do
-cats
-magic
-cars
