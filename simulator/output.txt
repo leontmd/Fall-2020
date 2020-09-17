@@ -1,0 +1,80 @@
+Testing subl
+PASS
+Testing addl_imm_reg
+PASS
+Testing movl_imm
+PASS
+Testing movl_reg_reg
+PASS
+Testing addl_reg_reg
+PASS
+Testing imull
+PASS
+Testing simple_return
+PASS
+Testing jmp
+PASS
+Testing shrl
+PASS
+Testing movl_deref
+PASS
+Testing movl_deref2
+PASS
+Testing pushpop
+PASS
+Testing callret
+FAIL
+Expected:
+"1 (0x1)
+2 (0x2)
+3 (0x3)
+2 (0x2)
+1 (0x1)
+"
+Got:
+"1 (0x1)
+2 (0x2)
+3 (0x3)
+3 (0x3)
+3 (0x3)
+"
+Testing stack_multibyte
+FAIL
+Expected:
+"-21555 (0xffffabcd)
+-21555 (0xffffabcd)
+"
+Got:
+"-21555 (0xffffabcd)
+205 (0xcd)
+"
+Testing cmpl
+PASS
+Testing je
+PASS
+Testing jl
+PASS
+Testing jle
+PASS
+Testing jge
+PASS
+Testing jbe
+PASS
+Testing factorial
+FAIL
+Expected:
+"120 (0x78)
+"
+Got:
+""
+Testing log2
+FAIL
+Expected:
+"4 (0x4)
+"
+Got:
+""
+Testing sort
+FAIL
+simulator returned non-zero exit status
+18 / 23
