@@ -4,7 +4,7 @@
 #include "pntvec.h"
 
 void default_constructor_test(int &error_methods);
-void test_const (int &error_methods);
+void parametered_constructor_test(int &error_methods);
 void test_copy_const (int &error_methods);
 void test_get_x (int &error_methods);
 void test_get_y (int &error_methods);
@@ -32,34 +32,34 @@ void test_subtract_a_non_whole_number (int &error_methods);
 
 int main()
 {
-  int error_methods = 0;
-  default_constructor_test(error_methods);
-  test_const (error_methods);
-  test_copy_const (error_methods);
-  test_get_x (error_methods);
-  test_get_y (error_methods);
-  test_get_z (error_methods);
-  test_equal_operator (error_methods);
-  test_plus_operator (error_methods);
-  test_minus_operator (error_methods);
-  test_multiply_operator (error_methods);
-  test_unary_minus_operator (error_methods);
-  test_distance_to (error_methods);
-  test_ostream (error_methods);
-  test_istream (error_methods);
-  test_multiplying_by_fraction (error_methods);
-  test_chaining_assignment (error_methods);
-  test_printing_with_decimals (error_methods);
-  test_multiply_by_a_number_slightly_bigger_than_one (error_methods);
-  test_very_small_numbers (error_methods);
-  test_istream_wtih_multiple_pntvecs (error_methods);
-  test_ostream_wtih_multiple_pntvecs (error_methods);
-  test_distance_to_with_the_same_point (error_methods);
-  test_distance_to_with_negative_points (error_methods);
-  test_negating_a_negative_pntvec (error_methods);
-  test_subtract_a_negative_pntvec (error_methods);
-  test_subtract_a_non_whole_number (error_methods);
-  return error_methods == 0 ? 0 : -1;
+    int error_methods = 0;
+    default_constructor_test(error_methods);
+    parametered_constructor_test(error_methods);
+    test_copy_const (error_methods);
+    test_get_x (error_methods);
+    test_get_y (error_methods);
+    test_get_z (error_methods);
+    test_equal_operator (error_methods);
+    test_plus_operator (error_methods);
+    test_minus_operator (error_methods);
+    test_multiply_operator (error_methods);
+    test_unary_minus_operator (error_methods);
+    test_distance_to (error_methods);
+    test_ostream (error_methods);
+    test_istream (error_methods);
+    test_multiplying_by_fraction (error_methods);
+    test_chaining_assignment (error_methods);
+    test_printing_with_decimals (error_methods);
+    test_multiply_by_a_number_slightly_bigger_than_one (error_methods);
+    test_very_small_numbers (error_methods);
+    test_istream_wtih_multiple_pntvecs (error_methods);
+    test_ostream_wtih_multiple_pntvecs (error_methods);
+    test_distance_to_with_the_same_point (error_methods);
+    test_distance_to_with_negative_points (error_methods);
+    test_negating_a_negative_pntvec (error_methods);
+    test_subtract_a_negative_pntvec (error_methods);
+    test_subtract_a_non_whole_number (error_methods);
+    return error_methods == 0 ? 0 : -1;
 }
 
 void default_constructor_test(int &error_methods)
@@ -75,17 +75,14 @@ void default_constructor_test(int &error_methods)
     }
 }
 
-void test_const(int &error_methods)
+void parametered_constructor_test(int &error_methods)
 {
-  try
+    try
     {
-      pntvec t (1.0, 2.0, 3.0);
-      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3)
-	{
-	  throw (-1);
-	}
+      pntvec point1 (1.0, 2.0, 3.0);
+      if(point1.get_x() != 1.0 || point1.get_y() != 2.0 || point1.get_z() != 3.0) { throw -1;}
     }
-  catch(int e)
+    catch(int e)
     {
       ++error_methods;
     }
@@ -93,18 +90,18 @@ void test_const(int &error_methods)
 
 void test_copy_const (int &error_methods)
 {
-  try
+    try
     {
-      pntvec t (1.0, 2.0, 3.0);
-      pntvec s (t);
-      if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3 || s.get_x() != 1 || s.get_y() != 2 || s.get_z() != 3)
-	{
-	  throw (-1);
-	}
+        pntvec t (1.0, 2.0, 3.0);
+        pntvec s (t);
+    if(t.get_x() != 1 || t.get_y() != 2 || t.get_z() != 3 || s.get_x() != 1 || s.get_y() != 2 || s.get_z() != 3)
+    {
+    throw (-1);
     }
-  catch(int e)
+    }
+    catch(int e)
     {
-      ++error_methods;
+    ++error_methods;
     }
 }
 
