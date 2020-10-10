@@ -1,0 +1,50 @@
+
+mt1:	file format Mach-O 64-bit x86-64
+
+
+Disassembly of section __TEXT,__text:
+
+0000000100000f20 _q9:
+100000f20: 55                          	pushq	%rbp
+100000f21: 48 89 e5                    	movq	%rsp, %rbp
+100000f24: 89 7d fc                    	movl	%edi, -4(%rbp)
+100000f27: 89 75 f8                    	movl	%esi, -8(%rbp)
+100000f2a: c7 45 f0 00 00 00 00        	movl	$0, -16(%rbp)
+100000f31: c7 45 f4 00 00 00 00        	movl	$0, -12(%rbp)
+100000f38: 8b 45 f4                    	movl	-12(%rbp), %eax
+100000f3b: 3b 45 fc                    	cmpl	-4(%rbp), %eax
+100000f3e: 0f 8d 37 00 00 00           	jge	55 <_q9+0x5b>
+100000f44: 8b 45 f4                    	movl	-12(%rbp), %eax
+100000f47: 83 e0 01                    	andl	$1, %eax
+100000f4a: 83 f8 00                    	cmpl	$0, %eax
+100000f4d: 0f 84 0b 00 00 00           	je	11 <_q9+0x3e>
+100000f53: 8b 45 f0                    	movl	-16(%rbp), %eax
+100000f56: 89 45 ec                    	movl	%eax, -20(%rbp)
+100000f59: e9 06 00 00 00              	jmp	6 <_q9+0x44>
+100000f5e: 8b 45 f8                    	movl	-8(%rbp), %eax
+100000f61: 89 45 ec                    	movl	%eax, -20(%rbp)
+100000f64: 8b 45 ec                    	movl	-20(%rbp), %eax
+100000f67: 03 45 f0                    	addl	-16(%rbp), %eax
+100000f6a: 89 45 f0                    	movl	%eax, -16(%rbp)
+100000f6d: 8b 45 f4                    	movl	-12(%rbp), %eax
+100000f70: 83 c0 01                    	addl	$1, %eax
+100000f73: 89 45 f4                    	movl	%eax, -12(%rbp)
+100000f76: e9 bd ff ff ff              	jmp	-67 <_q9+0x18>
+100000f7b: 8b 45 f0                    	movl	-16(%rbp), %eax
+100000f7e: 5d                          	popq	%rbp
+100000f7f: c3                          	retq
+
+0000000100000f80 _main:
+100000f80: 55                          	pushq	%rbp
+100000f81: 48 89 e5                    	movq	%rsp, %rbp
+100000f84: 48 83 ec 10                 	subq	$16, %rsp
+100000f88: c7 45 fc 00 00 00 00        	movl	$0, -4(%rbp)
+100000f8f: bf 03 00 00 00              	movl	$3, %edi
+100000f94: be 05 00 00 00              	movl	$5, %esi
+100000f99: e8 82 ff ff ff              	callq	-126 <_q9>
+100000f9e: 31 c9                       	xorl	%ecx, %ecx
+100000fa0: 89 45 f8                    	movl	%eax, -8(%rbp)
+100000fa3: 89 c8                       	movl	%ecx, %eax
+100000fa5: 48 83 c4 10                 	addq	$16, %rsp
+100000fa9: 5d                          	popq	%rbp
+100000faa: c3                          	retq

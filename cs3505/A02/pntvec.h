@@ -1,80 +1,86 @@
 /*
  *  Author: Leon Tran
- *  Date: 8/31/2020
- *  Assignment 01
+ *  Date: 9/20/2020
+ *  Assignment 02
  *  
- *  I wrote this file from scratch by myself.
+ *  I wrote this file from scratch by myself by following the instruction to convert
+ *  the original pntvec struct into a class.
  * 
- *  Description: The header file that contains the declaration of the class pntvec
+ *  Description: The header file that contains the declaration of the class pntvec.
+ *  pntvec is a template of a point in a 3-dimensiona space.
  */ 
+
+#ifndef PNTVEC_H
+#define PNTVEC_H
+
+// The c++ iostream library is used when console (or shell) I/O is needed.
 #include <iostream>
-#include <vector>
-#include <cmath>
+
+/* Template of pntvec object, which represents a point in a 3-dimension space
+*/
 class pntvec
 {
 private:
+  // x coordinate
   double x;
+
+  // y coordinate
   double y;
+
+  // z coordinate
   double z;
 
 public:
-  //Default constructor
+  //Declaration of default constructor. Instantiate the coordinates with 0.0
   pntvec();
   
-  //Constructor with parameters as 3 coordinates x, y, z
+  //Declaration of parametered constructor
   pntvec(double x, double y , double z);
 
-  //Copy constructor
-  pntvec(const pntvec& a);
+  //Declaration of copy constructor. Copy the coordinates from copy_point to this pntvec.
+  pntvec(const pntvec& copy_point);
 
-  //Overloaded assignment operator
+  //Declaration of overloaded assignment operator
   pntvec& operator=(const pntvec& rhs);
 
-  //Overloaded addition operator
-  pntvec operator+(const pntvec& rhs) const;
+  //Declaration of overloaded addition operator. 
+  //Const - doesn't change the object
+  const pntvec operator+(const pntvec& rhs) const;
 
-  //Overloaded subtraction operator
-  pntvec operator-(const pntvec& rhs) const;
+  //Declaration of overloaded subtraction operator. 
+  //Const - does not change the object
+  const pntvec operator-(const pntvec& rhs) const;
 
-  //Overloaded multiplication operator
-  pntvec operator*(const double&) const;
+  //Declaration of overloaded multiplication operator. 
+  //Const - does not change the object
+  const pntvec operator*(const double&) const;
 
-  //Overloaded negation operator
-  pntvec operator-() const;
+  //Declaration of overloaded negation (unary minus) operator. 
+  //Const - does not change the object
+  const pntvec operator-() const;
 
-  //Declaration of x getter
-  double get_x();
+  //Declaration of x getter. Const - does not change the object
+  double get_x() const;
 
-  //Declartion of y getter
-  double get_y();
+  //Declartion of y getter. Const - does not change the object
+  double get_y() const;
 
-  //Declaration of z getter
-  double get_z();
+  //Declaration of z getter. Const - does not change the object
+  double get_z() const;
 
-  //Declartion of distance_to method
-  double distance_to(const pntvec& b);
+  /**
+   * Declartion of distance_to method. Calculates the distance from this pntvec
+   * instance to b.
+   * Const - does not change the object
+  */
+  double distance_to(const pntvec& b) const;
 
   //Overloaded output operator
-  friend std::ostream& operator<<(std::ostream& out, const pntvec& object)
-  {
-    out << "(" << object.x << ", " << object.y << ", " << object.z << ")";
+  friend std::ostream& operator<<(std::ostream& out, const pntvec& object);
 
-    return out;
-  }
-
-  friend std::istream& operator>>(std::istream& in, pntvec& object)
-  {
-    std::vector<double> coords;
-    double num;
-    while(in >> num)
-    {
-      coords.push_back(num);
-      if(coords.size() == 3) break;
-    }
-
-    object.x = coords[0];
-    object.y = coords[1];
-    object.z = coords[2];
-  }
+  //Overloaded input operator
+  friend std::istream& operator>>(std::istream& in, pntvec& object);
 };
+
+#endif
 

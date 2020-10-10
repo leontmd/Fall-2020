@@ -1,0 +1,21 @@
+
+demo_mt1:	file format Mach-O 64-bit x86-64
+
+
+Disassembly of section __TEXT,__text:
+
+0000000100000fa0 _proc1:
+100000fa0: 55                          	pushq	%rbp
+100000fa1: 48 89 e5                    	movq	%rsp, %rbp
+100000fa4: 48 8b 07                    	movq	(%rdi), %rax
+100000fa7: 0f be 40 01                 	movsbl	1(%rax), %eax
+100000fab: 5d                          	popq	%rbp
+100000fac: c3                          	retq
+100000fad: 0f 1f 00                    	nopl	(%rax)
+
+0000000100000fb0 _main:
+100000fb0: 55                          	pushq	%rbp
+100000fb1: 48 89 e5                    	movq	%rsp, %rbp
+100000fb4: 31 c0                       	xorl	%eax, %eax
+100000fb6: 5d                          	popq	%rbp
+100000fb7: c3                          	retq

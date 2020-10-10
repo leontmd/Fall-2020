@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="BackTracking" targetName="BackTracking" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9f3f551b-e40e-4fc2-ba2f-53bf0c178d6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Asgs/Asg3/CS3100_F20_Asg3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Asgs/Asg3/CS3100_F20_Asg3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Quizzes/Quiz3/Quiz3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Quizzes/Quiz3/Quiz3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Slides/Lec5/Lec5.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/CanvasContents/Slides/Lec5/Lec5.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/02_Basic_DFA/ASSIGNMENT-2/u1234567_asg2_Prob234_Soln.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/02_Basic_DFA/ASSIGNMENT-2/u1234567_asg2_Prob234_Soln.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/02_Basic_DFA/Basic_DFA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/02_Basic_DFA/Basic_DFA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/ASSIGNMENT-3/u1234567_asg3_Prob1234.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/ASSIGNMENT-3/u1234567_asg3_Prob1234.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/ASSIGNMENT-3/u1234567_asg3_Prob1234_Soln.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/ASSIGNMENT-3/u1234567_asg3_Prob1234_Soln.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/Basic_NFA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/04_NFA/Basic_NFA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/07_NFA2RE/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/07_NFA2RE/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/08_Min_DFA/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/08_Min_DFA/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/For_CS3100_Fall2020/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/jove/Def_DFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3100/cs3100f20-master/Jove/jove/Def_DFA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3505/A02/hello" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3505/A02/hello.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3505/A02/pntvec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3505/A02/pntvec.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3505/A02/pntvec.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3505/A02/pntvec.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs3505/A02/test_pntvec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../cs3505/A02/test_pntvec.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cs4400/Randal E. Bryant, David R. O’Hallaron - Computer Systems. A Programmer’s Perspective [3rd ed.] (2016, Pearson).pdf" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1i0vew1dskkIPXzb680BOhHDPG9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BackTracking" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BackTracking" TARGET_NAME="BackTracking" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BackTracking" RUN_TARGET_NAME="BackTracking">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f3f551b-e40e-4fc2-ba2f-53bf0c178d6d" name="Default Changelist" comment="" />
+      <created>1601057424049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601057424049</updated>
+      <workItem from="1601057427359" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -48,7 +48,7 @@ and
 These are true facts pertaining to NFA
 
 
-[y] Four distinct 2-state NFAs are possible. The two
+[y] Four or more distinct 2-state NFAs are possible. The two
     states of these NFA can both be initial states.
     Further, it is possible to have no transitions
     at all out of these states.

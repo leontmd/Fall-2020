@@ -1,0 +1,100 @@
+
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx,url}
+\usepackage{proof}
+\usepackage{framed}
+\usepackage{etaremune}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{paralist}
+\thispagestyle{empty}
+
+% 1. To get version suitable for students to populate,
+%    remove the contents of the \ignoreSoln{..body..}
+%
+% 2. To get a version suitable for generating PDF 
+%    without solutions, remove the #1 below
+%
+% 3. To generate solutions, keep the #1 below
+%
+% 4. Assigned grader fills \ignoreSoln{..body..}
+%    and also provides his/her feedback to student
+%    and policy followed for point deduction
+%    So design policy before grading begins.
+
+\newcommand{\ignoreSoln}[1]{#1}   
+%\newcommand{\ignoreModel}[1]{#1} 
+
+
+\newcommand{\bigset}[2]{\big\{\;#1\;:\;#2\;\big\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Np}{\mathbb{N^{+}}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\DeclareMathSizes{14}{14}{14}{14}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+%\renewcommand{\qedsymbol}{\filledbox}
+
+
+\begin{center}
+\begin{large}
+  CS 3100, Spring 2020, Practice Problems 4 -- NOT Graded -- discuss
+  \ \\
+%  \ \\  
+%      {  {\Large\bf NAME: } \hfill {\Large\bf UNID: }\hspace{4cm} }
+%      \ \\
+  \ \\      
+\end{large}
+
+
+\end{center}
+\date{}
+
+
+\noindent No submission is required; however be doing these problems
+throughout the semester. The pertinent set of these problems will be reviewed
+before each exam. {\bf The point values don't matter,} but I did not want to
+destroy that info (may give you an idea of relative difficulties).
+
+
+All end-of-chapter problems will have been worked out by the
+time you come here!
+
+Here is the Practice Problem Set 4, all from \url{bit.ly/Automata_Jove}:
+
+\begin{itemize}
+\item Study the proofs under StarStar which proves that ${L^{*}}^{*} = L^*$
+
+\item The directory basicBattery contains a practice set, and the first six or so
+  problems pertain to what we've studied. There are some good regular-expression
+  problems there, and closure results on NFA and DFA.
+\end{itemize}
+
+\end{document}
